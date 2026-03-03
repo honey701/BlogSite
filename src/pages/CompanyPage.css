@@ -1,0 +1,64 @@
+.company-page {
+  font-family: system-ui;
+  color: #333;
+}
+
+/* HERO */
+
+.company-hero {
+  height: 320px;
+  background-image: url("https://images.unsplash.com/photo-1494390248081-4e521a5940db");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.company-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, #000000b0, #a86a2b);
+}
+
+.company-hero-content {
+  position: relative;
+  color: white;
+  text-align: center;
+}
+
+.company-hero h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+/* CONTAINER */
+
+.company-container {
+  max-width: 900px;
+  margin: auto;
+  padding: 60px 20px;
+}
+
+.company-section {
+  margin-bottom: 40px;
+}
+
+.company-section h2 {
+  margin-bottom: 12px;
+  color: #b8742b;
+}
+
+.company-section p {
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.company-section ul {
+  padding-left: 18px;
+}
+
+.company-section li {
+  margin-bottom: 8px;
+}

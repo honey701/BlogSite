@@ -1,0 +1,14 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: sticky;
+  top: 90px;
+  align-self: start;
+}
+
+@media (max-width: 900px) {
+  .sidebar {
+    position: static;
+  }
+}
