@@ -1,8 +1,8 @@
 {
-  "name": "nutraj-blog",
+  "name": "nutrahealth-blog",
   "version": "1.0.0",
   "private": true,
-  "description": "Nutraj Blog page – React replica",
+  "description": "Nutra Health Blog page – React replica",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

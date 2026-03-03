@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HeroBanner from "./components/HeroBanner";
 import BlogPage from "./components/BlogPage";
 import Footer from "./components/Footer";
-import BlogPostPage from "./pages/MainBlogpage";
+import MainBlogPage from "./pages/MainBlogPage";
 import About from "./pages/about";
 import CSR from "./pages/csr";
 import Awards from "./pages/awards";
@@ -26,7 +26,7 @@ export default function App() {
         />
 
         {/* Blog Post */}
-        <Route path="/blog/:slug" element={<BlogPostPage />} />
+        <Route path="/blog/:slug" element={<MainBlogPage />} />
 
         {/* Company pages */}
         <Route path="/about" element={<About/>} />
