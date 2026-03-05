@@ -1,7 +1,7 @@
 .footer {
   background: var(--brown);
   color: #c8b8a8;
-  margin-top: 80px;
+  /* margin-top: 80px; */
 }
 
 .footer__inner {

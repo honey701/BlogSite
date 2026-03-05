@@ -1,14 +1,12 @@
 import React from "react";
 import "./BlogCard.css";
-import { useNavigate } from "react-router-dom";
 
 const AVATAR_URL ="/logo2.svg"
-export default function BlogCard({ post, animationDelay = 0 }) {
-  const navigate = useNavigate();
+export default function BlogCard({ post, animationDelay = 0, onSelectPost }) {
 
   function handleClick(e) {
     e.preventDefault();
-    navigate(`/blog/${post.slug}`);
+    if (onSelectPost) onSelectPost(post.slug);
   }
 
   return (

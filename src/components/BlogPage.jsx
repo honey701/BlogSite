@@ -5,7 +5,7 @@ import Sidebar from "./Sidebar";
 import { blogPosts } from "../data/blogData";
 import "./BlogPage.css";
 
-export default function BlogPage() {
+export default function BlogPage({ onSelectPost }) {
   const [activeTag , setActiveTag] = useState(null);
   const [activeCategory, setActiveCategory] = useState("all");
   const [currentPage, setCurrentPage] = useState(1);
@@ -47,6 +47,7 @@ export default function BlogPage() {
           posts={filteredPosts}
           currentPage={currentPage}
           onPageChange={handlePageChange}
+          onSelectPost={onSelectPost}
         />
         <Sidebar 
         activeTag={activeTag}

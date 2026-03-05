@@ -5,7 +5,7 @@ import "./BlogGrid.css";
 
 const POSTS_PER_PAGE = 4;
 
-export default function BlogGrid({ posts, currentPage, onPageChange }) {
+export default function BlogGrid({ posts, currentPage, onPageChange, onSelectPost }) {
   const totalPages = Math.ceil(posts.length / POSTS_PER_PAGE);
 
   const start = (currentPage - 1) * POSTS_PER_PAGE;
@@ -22,7 +22,7 @@ export default function BlogGrid({ posts, currentPage, onPageChange }) {
       {visible.length > 0 ? (
         <div className="blog-grid">
           {visible.map((post, i) => (
-            <BlogCard key={post.id} post={post} animationDelay={i * 0.07} />
+            <BlogCard key={post.id} post={post} animationDelay={i * 0.07} onSelectPost={onSelectPost} />
           ))}
         </div>
       ) : (
