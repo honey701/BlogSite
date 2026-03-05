@@ -9,7 +9,7 @@ export default function Leadership() {
           text: "Nutra Health Blog is led by a passionate team focused on wellness education."
         },
         {
-          heading: "Editorial Team",
+          heading: "Editorial",
           list: [
             "Nutrition researchers",
             "Health writers",
