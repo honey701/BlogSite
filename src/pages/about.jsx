@@ -8,6 +8,7 @@ export default function About() {
         {
           text: "Nutra Health Blog is a platform dedicated to helping people make better health and nutrition decisions."
         },
+        
         {
           heading: "What We Cover",
           list: [
