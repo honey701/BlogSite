@@ -2,37 +2,47 @@ import React, { useState } from "react";
 import CategoryNav from "./CategoryNav";
 import BlogGrid from "./BlogGrid";
 import Sidebar from "./Sidebar";
+import MainBlogPage from "../pages/MainBlogPage";
 import { blogPosts } from "../data/blogData";
 import "./BlogPage.css";
 
-export default function BlogPage({ onSelectPost }) {
-  const [activeTag , setActiveTag] = useState(null);
+export default function BlogPage() {
+  const [activeTag, setActiveTag] = useState(null);
   const [activeCategory, setActiveCategory] = useState("all");
   const [currentPage, setCurrentPage] = useState(1);
+  const [selectedSlug, setSelectedSlug] = useState(null);
 
-  // Simple category filter (in real app would filter by tag)
-  const filteredPosts = blogPosts.filter((post) =>
-    {
-      const categoryMatch =
-        activeCategory === "all" ||
-        post.tags.some((t) =>
-        t.toLowerCase().replace(/\s+/g,"-") ===
-      activeCategory);
-      const tagMatch =
-      !activeTag || post.tags.includes(activeTag);
+  const filteredPosts = blogPosts.filter((post) => {
+    const categoryMatch =
+      activeCategory === "all" ||
+      post.tags.some((t) =>
+        t.toLowerCase().replace(/\s+/g, "-") === activeCategory);
+    const tagMatch = !activeTag || post.tags.includes(activeTag);
+    return categoryMatch && tagMatch;
+  });
 
-      return categoryMatch && tagMatch;
-    });
+  function handleSelectPost(slug) {
+    setSelectedSlug(slug);
+    setTimeout(() => {
+      document.getElementById("blog-content-area")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 50);
+  }
+
+  function handleBack() {
+    setSelectedSlug(null);
+    setTimeout(() => {
+      document.getElementById("blog-content-area")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 50);
+  }
 
   function handleCategoryChange(cat) {
     setActiveCategory(cat);
     setCurrentPage(1);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    setSelectedSlug(null);
   }
 
   function handlePageChange(page) {
     setCurrentPage(page);
-    window.scrollTo({ top: 300, behavior: "smooth" });
   }
 
   return (
@@ -43,16 +53,19 @@ export default function BlogPage({ onSelectPost }) {
       />
 
       <div className="blog-page__layout">
-        <BlogGrid
-          posts={filteredPosts}
-          currentPage={currentPage}
-          onPageChange={handlePageChange}
-          onSelectPost={onSelectPost}
-        />
-        <Sidebar 
-        activeTag={activeTag}
-        onTagChange = {setActiveTag}
-        />
+        <div id="blog-content-area" className="blog-page__content-area">
+          {selectedSlug ? (
+            <MainBlogPage slug={selectedSlug} onBack={handleBack} />
+          ) : (
+            <BlogGrid
+              posts={filteredPosts}
+              currentPage={currentPage}
+              onPageChange={handlePageChange}
+              onSelectPost={handleSelectPost}
+            />
+          )}
+        </div>
+        <Sidebar activeTag={activeTag} onTagChange={setActiveTag} />
       </div>
     </main>
   );
