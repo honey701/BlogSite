@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="90" viewBox="0 0 420 90">
+
+  <defs>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f6c177"/>
+      <stop offset="100%" stop-color="#c48a2e"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Small tagline -->
+  <text x="210" y="20"
+        text-anchor="middle"
+        font-family="Arial, sans-serif"
+        font-size="12"
+        letter-spacing="3"
+        fill="url(#gold)">
+        UNLOCK BETTER HEALTH
+  </text>
+
+  <!-- Main title -->
+  <text x="210" y="55"
+        text-anchor="middle"
+        font-family="Georgia, serif"
+        font-size="36"
+        font-weight="700"
+        fill="#2f2f2f">
+        Nutra Health
+  </text>
+
+  <!-- Sub title -->
+  <text x="210" y="80"
+        text-anchor="middle"
+        font-family="Arial, sans-serif"
+        font-size="14"
+        letter-spacing="2"
+        fill="#c48a2e">
+        BLOG
+  </text>
+
+</svg>

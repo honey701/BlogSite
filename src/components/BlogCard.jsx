@@ -2,9 +2,7 @@ import React from "react";
 import "./BlogCard.css";
 import { useNavigate } from "react-router-dom";
 
-const AVATAR_URL =
-  "https://www.nutraj.com/cdn/shop/files/Nutraj_logo_37x37-100_37X_5f794a31-d434-4491-bcb8-7748d75bc1f0_37X.jpg?v=1683551728";
-
+const AVATAR_URL ="/logo2.svg"
 export default function BlogCard({ post, animationDelay = 0 }) {
   const navigate = useNavigate();
 
