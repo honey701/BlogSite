@@ -11,7 +11,7 @@ export default function About() {
         {
           heading: "What We Cover",
           list: [
-            "Nutrition and diet tips",
+            "Nutrition and diet",
             "Supplements and wellness",
             "Joint care and mobility",
             "Weight management",
