@@ -1,14 +1,31 @@
 .sidebar {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 22px;
   position: sticky;
-  top: 90px;
+  top: 82px;
   align-self: start;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 960px) {
   .sidebar {
     position: static;
+    flex-direction: row;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 16px;
+    padding-bottom: 4px;
   }
+
+  .sidebar::-webkit-scrollbar { display: none; }
+
+  .sidebar > * {
+    min-width: 270px;
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar > * { min-width: 240px; }
 }

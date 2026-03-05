@@ -12,11 +12,11 @@ export default function HeroBanner() {
         </span>
 
         <h1 className="hero-banner__title">
-          The Nutra Health Blog
+          The Nutra<em>Health</em> Blog
         </h1>
 
         <p className="hero-banner__subtitle">
-          Real nutrition advice, supplement insights, and healthy lifestyle strategies.
+          Real nutrition advice, supplement insights, and healthy lifestyle strategies — curated for a better you.
         </p>
 
         <div className="hero-banner__badges">
@@ -25,6 +25,8 @@ export default function HeroBanner() {
           <span className="hero-badge">❤️ Support Wellness</span>
         </div>
       </div>
+
+      <div className="hero-banner__divider" />
 
       <div className="hero-banner__scroll-hint">
         <span>Scroll to explore</span>
